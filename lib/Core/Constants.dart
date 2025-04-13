@@ -1,0 +1,1 @@
+const String BASE_URL = "https://thefluentme.p.rapidapi.com/";
