@@ -41,6 +41,8 @@ dependencies:
   path_provider:
   just_audio:
   dio: ^5.8.0+1
+  http_parser:
+  supabase_flutter:
   dartz:
 dev_dependencies:
   flutter_test:
