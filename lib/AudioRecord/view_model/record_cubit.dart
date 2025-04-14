@@ -10,10 +10,15 @@ class RecordCubit extends Cubit<RecordState> {
   RecordCubit(this._service) : super(RecordInitial());
 
   Future<void> requestPermissions() async {
-    await [
+    final status = await [
       Permission.microphone,
       Permission.storage,
     ].request();
+
+    if (status[Permission.microphone] != PermissionStatus.granted ||
+        status[Permission.storage] != PermissionStatus.granted) {
+      emit(RecordError("Permissions not granted."));
+    }
   }
 
   void startRecording() async {
